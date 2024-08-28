@@ -1,0 +1,26 @@
+name: Ansh-Abhay-ka-baap-here
+routes:
+  - name: web
+    type: http
+    port: 5000 
+
+services:
+  - name: Ansh-Abhay-ka-baap-here-service
+    description: "Service for Ansh-Abhay-ka-baap-here application"
+    image:
+      dockerfile: Dockerfile
+    env:
+      - name: dotenv
+        value: "name"
+      - name: Rahul
+        value: "value"
+    resources:
+      cpu: "free"
+    ports:
+      - port: 5000
+        protocol: TCP
+    routes:
+      - name: Ansh-Abhay-ka-baap-here-route
+        path: "/*"
+        service: Ansh-Abhay-ka-baap-here-service
+        
